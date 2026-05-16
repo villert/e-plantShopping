@@ -1,0 +1,294 @@
+:root {
+  color-scheme: dark;
+  font-family: Inter, system-ui, sans-serif;
+  background: #f3f8f1;
+  color: #1b2621;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body,
+html,
+#root {
+  min-height: 100%;
+  margin: 0;
+}
+
+button {
+  cursor: pointer;
+}
+
+.app-shell {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px 40px;
+}
+
+.hero-banner {
+  display: grid;
+  gap: 24px;
+  padding: 40px 0 20px;
+}
+
+.hero-banner h1 {
+  margin: 0;
+  font-size: clamp(2.5rem, 4vw, 4rem);
+}
+
+.hero-banner p {
+  max-width: 700px;
+  line-height: 1.75;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.hero-actions button,
+.main-nav button,
+.checkout-panel button,
+.card button {
+  border: none;
+  border-radius: 999px;
+  padding: 12px 18px;
+  font-weight: 600;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.hero-actions button:hover,
+.main-nav button:hover,
+.card button:hover,
+.checkout-panel button:hover {
+  transform: translateY(-1px);
+}
+
+.hero-actions button {
+  background: #2b7a37;
+  color: white;
+}
+
+.main-nav {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin: 16px 0;
+}
+
+.main-nav button {
+  background: #ffffff;
+  border: 1px solid #d6e8d8;
+  color: #1b2621;
+}
+
+.cart-badge {
+  display: inline-flex;
+  min-width: 26px;
+  height: 26px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  background: #2b7a37;
+  color: #fff;
+  margin-left: 8px;
+  font-size: 0.9rem;
+}
+
+.main-content {
+  margin-top: 16px;
+}
+
+.home-panel,
+.cart-page,
+.about-page {
+  background: white;
+  border-radius: 24px;
+  padding: 28px;
+  box-shadow: 0 18px 50px rgba(24, 46, 32, 0.08);
+}
+
+.home-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 18px;
+  margin-top: 24px;
+}
+
+.home-card {
+  padding: 20px;
+  border-radius: 20px;
+  background: #f4faf3;
+  border: 1px solid #e4efe5;
+}
+
+.product-category {
+  margin-bottom: 36px;
+}
+
+.product-category h3 {
+  margin: 0 0 12px;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 18px;
+}
+
+.card {
+  background: white;
+  border: 1px solid #e2ece2;
+  border-radius: 20px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.card img {
+  width: 100%;
+  object-fit: cover;
+  aspect-ratio: 4 / 3;
+}
+
+.card-body {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.card-title {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.card-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.card p {
+  margin: 0;
+  line-height: 1.5;
+  color: #4c5a4d;
+}
+
+.card button {
+  margin-top: auto;
+  background: #2b7a37;
+  color: white;
+}
+
+.card button:disabled {
+  background: #a5c9a1;
+  cursor: not-allowed;
+}
+
+.cart-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.cart-list {
+  display: grid;
+  gap: 16px;
+}
+
+.cart-item {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: 18px;
+  padding: 18px;
+  border: 1px solid #e5eee5;
+  border-radius: 18px;
+}
+
+.cart-item img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 18px;
+}
+
+.cart-item-info {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.item-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+}
+
+.item-actions button,
+.secondary {
+  background: #f0f8f3;
+  color: #1b2621;
+}
+
+.item-actions button:hover,
+.secondary:hover {
+  transform: translateY(-1px);
+}
+
+.cart-summary {
+  margin-top: 24px;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.checkout-panel {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.checkout-panel button {
+  background: #2b7a37;
+  color: #fff;
+  padding: 14px 22px;
+}
+
+.checkout-panel button:disabled {
+  opacity: 0.7;
+}
+
+.coming-soon {
+  display: inline-flex;
+  font-size: 0.95rem;
+  color: #2b7a37;
+  font-weight: 700;
+}
+
+.about-page h2 {
+  margin-top: 0;
+}
+
+@media (max-width: 720px) {
+  .cart-item {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-actions,
+  .main-nav,
+  .cart-header,
+  .cart-summary {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
