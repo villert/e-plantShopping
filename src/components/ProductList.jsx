@@ -146,6 +146,31 @@ const plantCatalog = [
   },
 ];
 
+export function ProductNavbar({ onNavigate }) {
+  const cartItems = useSelector((state) => state.cart.items);
+  const totalCount = useMemo(
+    () => Object.values(cartItems).reduce((sum, item) => sum + item.quantity, 0),
+    [cartItems]
+  );
+
+  return (
+    <nav className="product-nav">
+      <div className="brand">
+        <span className="plant-logo">🌿</span>
+        <span>Paradise Nursery</span>
+      </div>
+      <div className="nav-links">
+        <button onClick={() => onNavigate('plants')}>Plants</button>
+        <button onClick={() => onNavigate('cart')}>Cart</button>
+      </div>
+      <div className="cart-status">
+        <span className="cart-icon">🛒</span>
+        <span className="cart-count">{totalCount}</span>
+      </div>
+    </nav>
+  );
+}
+
 function ProductList() {
   const dispatch = useDispatch();
   const cartItems = useSelector((state) => state.cart.items);
