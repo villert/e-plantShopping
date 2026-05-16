@@ -293,6 +293,15 @@ button {
   gap: 16px;
 }
 
+.cart-total-summary {
+  margin-top: 18px;
+  padding: 16px;
+  background: #f0f8f3;
+  border: 1px solid #d6e8d8;
+  border-radius: 18px;
+  font-weight: 700;
+}
+
 .cart-item {
   display: grid;
   grid-template-columns: 120px 1fr;

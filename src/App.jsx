@@ -2,7 +2,7 @@ import { useEffect, useMemo, useState } from 'react';
 import { useSelector } from 'react-redux';
 import AboutUs from './AboutUs.jsx';
 import ProductList, { ProductNavbar } from './components/ProductList.jsx';
-import CartItem from './components/CartItem.jsx';
+import CartItem, { CartTotal } from './components/CartItem.jsx';
 
 function App() {
   const [view, setView] = useState('home');
@@ -111,6 +111,8 @@ function App() {
                   <CartItem key={item.id} item={item} />
                 ))}
               </div>
+
+              <CartTotal />
 
               {totalCount > 0 && (
                 <div className="cart-summary">

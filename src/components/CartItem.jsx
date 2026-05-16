@@ -1,4 +1,4 @@
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { removeItem, updateQuantity } from '../store/CartSlice.jsx';
 
 function CartItem({ item }) {
@@ -44,3 +44,19 @@ function CartItem({ item }) {
 }
 
 export default CartItem;
+
+export function CartTotal() {
+  const cartItems = useSelector((state) => state.cart.items);
+  const totalAmount = Object.values(cartItems).reduce(
+    (sum, item) => sum + item.price * item.quantity,
+    0
+  );
+
+  return (
+    <div className="cart-total-summary">
+      <p>
+        Total cart amount: <strong>${totalAmount.toFixed(2)}</strong>
+      </p>
+    </div>
+  );
+}
